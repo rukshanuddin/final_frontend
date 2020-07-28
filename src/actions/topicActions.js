@@ -1,3 +1,4 @@
+
 export const fetchTopics = () => {
   return (dispatch) => {
     return fetch("http://localhost:3000/api/v1/topics")
@@ -7,3 +8,4 @@ export const fetchTopics = () => {
       });
   };
 };
+

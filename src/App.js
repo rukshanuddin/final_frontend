@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import TopicList from "./containers/TopicList";
 import AllLinks from "./containers/AllLinks"
+import TopicShow from './containers/TopicShow'
 
 
 class App extends Component {
@@ -24,6 +25,13 @@ class App extends Component {
         <Router>
           <Route exact path="/topics" component={TopicList} />
           <Route exact path="/links" component={AllLinks} />
+          <Route
+            exact
+            path="/topics/:id"
+            render={(props) => (
+              <TopicShow {...props} topic={this.props.topics} />
+            )}
+          />
         </Router>
         <Signup />
         <Login />
