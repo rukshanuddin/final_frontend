@@ -1,39 +1,29 @@
-const setUser = (payload) => ({ type: "SET_USER", payload });
-
-export const logUserOut = () => ({ type: "LOG_OUT" });
-
-export const fetchUser = (userInfo) => (dispatch) => {
-  fetch(`http://localhost:3000/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({ auth: userInfo }),
-  })
-    .then((res) => res.json())
-    .catch((error) => {
-      return error;
-    })
-    .then((data) => {
-      localStorage.setItem("token", data.jwt);
-      dispatch(setUser(data.user));
-    });
+export const fetchLink = (id) => {
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/links/${id}`)
+      .then((resp) => resp.json())
+      .then((link) => {
+        dispatch({ type: "FETCH_LINK", payload: link });
+      });
+  };
 };
 
-export const signUserUp = (userInfo) => (dispatch) => {
-  fetch(`http://localhost:3000/users`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(userInfo),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      localStorage.setItem("token", data.jwt);
-      dispatch(setUser(data.user));
-    });
+export const fetchTopicLinks = (id) => {
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/topics/${id}`)
+      .then((resp) => resp.json())
+      .then((links) => {
+        dispatch({ type: "FETCH_TOPIC_LINKS", payload: links });
+      });
+  };
 };
 
+export const fetchLinks = () => {
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/links/`)
+      .then((resp) => resp.json())
+      .then((links) => {
+        dispatch({ type: "FETCH_LINKS", payload: links });
+      });
+  };
+};
