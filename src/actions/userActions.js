@@ -23,13 +23,13 @@ export const fetchUser = (userInfo) => (dispatch) => {
 };
 
 export const signUserUp = (userInfo) => (dispatch) => {
-  fetch(`http://localhost:3000/users`, {
+  fetch(`http://localhost:3000/api/v1/users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(userInfo),
+    body: JSON.stringify({ user: userInfo }),
   })
     .then((res) => res.json())
     .then((data) => {
