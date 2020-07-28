@@ -1,14 +1,14 @@
 import userReducer from "./userReducer";
-import commentReducer from "./commentReducer";
-import linkReducer from "./linkReducer";
-import topicReducer from "./topicReducer";
+import comments from "./commentReducer";
+import links from "./linkReducer";
+import topics from "./topicReducer";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   userReducer,
-  commentReducer,
-  linkReducer,
-  topicReducer,
+  comments,
+  links,
+  topics,
 });
 
 export default rootReducer;
