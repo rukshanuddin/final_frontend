@@ -9,13 +9,13 @@ class AllLinks extends Component {
   }
 
   render() {
-    const topics = this.props.topics.map((topic, i) => (
-      <LinkItem key={i} topic={topic} />
+    const links = this.props.links.map((link, i) => (
+      <LinkItem key={i} link={link} />
     ));
     return (
       <div>
         <h3>Link List</h3>
-        <ul className="collection">{topics}</ul>
+        <ul className="collection">{links}</ul>
       </div>
     );
   }

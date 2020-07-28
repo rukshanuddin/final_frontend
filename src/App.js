@@ -23,6 +23,7 @@ class App extends Component {
         {/* <TopicList /> */}
         <Router>
           <Route exact path="/topics" component={TopicList} />
+          <Route exact path="/links" component={AllLinks} />
         </Router>
         <Signup />
         <Login />
