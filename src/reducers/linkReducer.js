@@ -1,11 +1,7 @@
-export default (state = [], action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case "FETCH_LINK":
-      return [...action.payload];
-    case "FETCH_LINKS":
-      return [...action.payload];
-    case "FETCH_TOPIC_LINKS":
-      return [...action.payload];
+      return action.payload;
     default:
       return state;
   }
