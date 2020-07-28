@@ -9,12 +9,16 @@ export const fetchUser = (userInfo) => (dispatch) => {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify({auth: userInfo}),
+    body: JSON.stringify({ auth: userInfo }),
   })
     .then((res) => res.json())
     .then((data) => {
-      localStorage.setItem("token", data.jwt);
-      dispatch(setUser(data.user));
+      if (data.error) {
+        return console.log(data.error);
+      } else {
+        localStorage.setItem("token", data.jwt);
+        dispatch(setUser(data.user));
+      }
     });
 };
 
@@ -29,7 +33,11 @@ export const signUserUp = (userInfo) => (dispatch) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      localStorage.setItem("token", data.jwt);
-      dispatch(setUser(data.user));
+      if (data.error) {
+        return console.log(data.error);
+      } else {
+        localStorage.setItem("token", data.jwt);
+        dispatch(setUser(data.user));
+      }
     });
 };
