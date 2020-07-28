@@ -1,14 +1,16 @@
 import React, {Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { connect } from "react-redux";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import TopicList from "./containers/TopicList";
+import AllLinks from "./containers/AllLinks"
 
 
 class App extends Component {
-  componentDidMount() {
 
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -18,6 +20,10 @@ class App extends Component {
         ) : (
           <h1>Welcome, {this.props.userReducer.user.first_name}</h1>
         )}
+        {/* <TopicList /> */}
+        <Router>
+          <Route exact path="/topics" component={TopicList} />
+        </Router>
         <Signup />
         <Login />
         <button>Logout</button>
@@ -29,6 +35,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     userReducer: state.userReducer,
+    topicReducer: state.topicReducer,
   };
 };
 
