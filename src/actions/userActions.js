@@ -41,3 +41,23 @@ export const signUserUp = (userInfo) => (dispatch) => {
       }
     });
 };
+
+export const fetchProfile = () => {
+    const token = localStorage.getItem("token")
+    debugger
+  return (dispatch) => {
+    return fetch("http://localhost:3000/profile/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => console.log(data))
+      .then((data) => {
+        dispatch({ type: "FETCH_USER", payload: data });
+      });
+  };
+};
