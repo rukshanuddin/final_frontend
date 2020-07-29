@@ -10,6 +10,11 @@ const userReducer = (state = defaultState, action) => {
         loggedIn: true,
         user: { ...action.payload },
       };
+    case "FETCH_USER":
+      return {
+        loggedIn: true,
+        user: {...action.payload},
+      };
     case "LOG_OUT":
       localStorage.clear();
       return {
