@@ -30,9 +30,15 @@ export default function LinksList(props) {
   const useStyles = makeStyles({
     root: {
       width: "100%",
+      margin: "auto",
+      marginTop: "2em",
+      marginBottom: "2em",
+      flexDirection: "column",
+      paddingBottom: "2em",
+      alignItems: "center",
     },
     container: {
-      maxHeight: 440,
+      maxHeight: "50vh",
     },
   });
   const classes = useStyles();

@@ -15,55 +15,42 @@ class TopicShow extends Component {
   render() {
     let topic = this.props.topic;
     let links = this.props.links;
-    
+
     return (
-      <Paper style={{ marginBottom: "1em" }}>
+      <Paper
+        elevation={24}
+        square={true}
+        style={{
+          margin: "auto",
+          marginBottom: "2em",
+          textAlign: "center",
+          flexDirection: "column",
+          paddingBottom: "2em",
+          alignItems: "center",
+          width: "95%",
+        }}
+      >
+        <Typography
+          variant="h3"
+          component="h3"
+          style={{ textAlign: "center", paddingTop: "1em" }}
+        >
+          {topic.name}
+        </Typography>
+
         <Paper
-          elevation={24}
           square={true}
+          elevation={15}
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            paddingTop: "1em",
             paddingBottom: "1em",
             margin: "2em",
             width: "95%",
           }}
         >
-          <Paper
-            square={true}
-            elevation={15}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              paddingTop: "1em",
-              paddingBottom: "1em",
-              margin: "2em",
-              width: "95%",
-            }}
-          >
-            <Typography variant="h3" component="h3">
-              {topic.name}
-            </Typography>
-          </Paper>
-
-          <Paper
-            square={true}
-            elevation={15}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              paddingTop: "1em",
-              paddingBottom: "1em",
-              margin: "2em",
-              width: "95%",
-            }}
-          >
-            <LinksList links={links} />
-          </Paper>
+          <LinksList links={links} />
         </Paper>
       </Paper>
     );

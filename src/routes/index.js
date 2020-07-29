@@ -12,6 +12,7 @@ import NotFound from "../components/NotFound";
 import AllLinks from "../containers/AllLinks";
 import Signup from "../components/Signup";
 import Login from "../components/Login";
+import About from '../components/About'
 
 
 const routes = (
@@ -25,18 +26,15 @@ const routes = (
         <Route
           exact
           path="/topics/:id"
-          render={(routeProps) => (
-            <TopicShow {...routeProps}  />
-          )}
+          render={(routeProps) => <TopicShow {...routeProps} />}
         />
         <Route exact path="/links" component={AllLinks} />
         <Route
           exact
           path="/links/:id"
-          render={(routeProps) => (
-            <LinkShow {...routeProps}  />
-          )}
+          render={(routeProps) => <LinkShow {...routeProps} />}
         />
+        <Route exact path="/about" component={About} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <Route component={NotFound} />

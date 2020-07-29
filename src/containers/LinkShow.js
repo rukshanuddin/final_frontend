@@ -11,8 +11,6 @@ class LinkShow extends Component {
     let paramsId = parseInt(this.props.match.params.id, 10);
     this.props.fetchLink(paramsId);
     this.props.fetchComments(paramsId)
-
-    
   }
 
   render() {

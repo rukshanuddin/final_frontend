@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import LinkItem from "../components/LinkItem";
 import { connect } from "react-redux";
 import { fetchLinks } from "../actions/linkActions";
+import LinksList from "../components/LinkList";
+import { Paper, Typography } from "@material-ui/core";
 
 class AllLinks extends Component {
   componentDidMount() {
@@ -9,13 +10,47 @@ class AllLinks extends Component {
   }
 
   render() {
-    const links = this.props.links.map((link, i) => (
-      <LinkItem key={i} link={link} />
-    ));
+    const links = this.props.links
+    
     return (
       <div>
-        <h3>Link List</h3>
-        <ul className="collection">{links}</ul>
+        <Paper
+          square={true}
+          elevation={15}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            paddingTop: "1em",
+            paddingBottom: "1em",
+            margin: "2em",
+            width: "95%",
+          }}
+        >
+          <Typography
+            variant="h3"
+            component="h3"
+            style={{ textAlign: "center", paddingTop: "1em" }}
+          >
+            All the Links!
+          </Typography>
+
+          <Paper
+            square={true}
+            elevation={15}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              paddingTop: "1em",
+              paddingBottom: "1em",
+              margin: "2em",
+              width: "95%",
+            }}
+          >
+            <LinksList links={links} />
+          </Paper>
+        </Paper>
       </div>
     );
   }

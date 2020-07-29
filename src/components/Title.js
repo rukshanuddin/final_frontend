@@ -9,7 +9,9 @@ const styles = (theme) => ({
     alignItems: "center",
     paddingTop: "1em",
     paddingBottom: "1em",
-    margin: "2em",
+    margin: "auto",
+    marginTop: "2em",
+    marginBottom: "2em",
     width: "95%",
   },
 });

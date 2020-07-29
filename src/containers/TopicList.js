@@ -19,9 +19,10 @@ class TopicList extends Component {
         square={true}
         style={{
           margin: "auto",
+          marginBottom: "2em",
           flexDirection: "column",
+          paddingBottom: "2em",
           alignItems: "center",
-
           width: "95%",
         }}
       >
@@ -38,7 +39,7 @@ class TopicList extends Component {
           <GridListTile
             key="Subheader"
             cols={2}
-            style={{ textAlign: "center", height: "auto", padding: "auto" }}
+            style={{ textAlign: "center", height: "auto", padding: "2em" }}
           >
             <Typography variant="h2" component="h3" align="center">
               Topics

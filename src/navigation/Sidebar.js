@@ -7,10 +7,12 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
-// import PersonIcon from "@material-ui/icons/Person";
-import { Computer, Home } from "@material-ui/icons";
+import CreateIcon from "@material-ui/icons/Create";
+import { Home } from "@material-ui/icons";
 import LinkIcon from "@material-ui/icons/Link";
-
+import VpnKeyTwoToneIcon from "@material-ui/icons/VpnKeyTwoTone";
+import InfoIcon from "@material-ui/icons/Info";
+import SentimentVerySatisfiedOutlinedIcon from "@material-ui/icons/SentimentVerySatisfiedOutlined";
 const drawerWidth = 240;
 
 const styles = (theme) => ({
@@ -67,7 +69,7 @@ const Sidebar = (props) => (
       <Link to="/signup" className={props.classes.link}>
         <ListItem button>
           <ListItemIcon>
-            <Computer />
+            <CreateIcon />
           </ListItemIcon>
           <ListItemText primary="Signup" />
         </ListItem>
@@ -76,12 +78,29 @@ const Sidebar = (props) => (
       <Link to="/login" className={props.classes.link}>
         <ListItem button>
           <ListItemIcon>
-            <Computer />
+            <VpnKeyTwoToneIcon />
           </ListItemIcon>
           <ListItemText primary="Login" />
         </ListItem>
       </Link>
 
+      <Link to="/about" className={props.classes.link}>
+        <ListItem button>
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItem>
+      </Link>
+
+      <a href="https://awesomeweb.design" className={props.classes.link}>
+        <ListItem button>
+          <ListItemIcon>
+            <SentimentVerySatisfiedOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary="Personal" />
+        </ListItem>
+      </a>
     </List>
   </Drawer>
 );

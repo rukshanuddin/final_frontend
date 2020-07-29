@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchUser } from "../actions/userActions";
+import { Typography, Paper, Button, TextField } from "@material-ui/core";
 
 class Login extends Component {
   state = {
-
-      email: "",
-      password: "",
-    
+    email: "",
+    password: "",
   };
 
   handleOnChange = (e) => {
@@ -24,27 +23,63 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Login Form</h1>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleOnChange}
-          />
-          <br />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleOnChange}
-          />
-          <br />
-          <input type="submit" value="Login" />
-        </form>
+      <div style={{ height: "100vh" }}>
+        <Paper
+          square={true}
+          elevation={23}
+          style={{
+            padding: "1em",
+            marginTop: "1em",
+            width: "50%",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          <Typography variant="h4" component="h3" align="center">
+            Login Form
+          </Typography>
+          <Typography variant="subtitle1" component="p" align="center">
+            If you haven't please register above
+          </Typography>
+          <Paper style={{ marginTop: "1em", padding: "1em" }}>
+            <form onSubmit={this.handleLogin} noValidate autoComplete="off">
+              <TextField
+                required
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                value={this.state.email}
+                fullWidth
+                onChange={this.handleOnChange}
+                label="Required"
+                variant="filled"
+                helperText="We will never share your e-mail!"
+              />
+              <TextField
+                required
+                name="password"
+                label="Password"
+                type="password"
+                placeholder="Password"
+                fullWidth
+                value={this.state.password}
+                onChange={this.handleOnChange}
+                variant="filled"
+                helperText="Enter your password"
+              />
+              <Button
+                variant="contained"
+                fullWidth
+                size="large"
+                color="primary"
+                type="submit"
+                style={{ marginTop: "1em" }}
+              >
+                Login
+              </Button>
+            </form>
+          </Paper>
+        </Paper>
       </div>
     );
   }
