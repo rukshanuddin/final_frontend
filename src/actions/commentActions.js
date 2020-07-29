@@ -8,7 +8,7 @@ export const fetchComments = (link_id) => {
   };
 };
 
-export const addComment = (link_id ,comment) => {
+export const addComment = (link_id, comment) => {
   return (dispatch) => {
     return fetch(`http://localhost:3000/api/v1/links/${link_id}/comments`, {
       method: "POST",
@@ -34,14 +34,13 @@ export const removeComment = (link_id, commentId) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
-        }
+        },
       }
     )
       .then((resp) => resp.json())
       .then((comments) => {
         dispatch({ type: "REMOVE_COMMENT", payload: comments });
       })
-    //   .then(fetchComments(link_id))
       .catch((err) => {
         console.log(
           "There has been a problem with your fetch DELETE operation: ",
