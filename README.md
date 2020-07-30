@@ -1,68 +1,68 @@
+# The Block
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![block](/src/resources/block.svg)
 
-## Available Scripts
+## Project FAQ
 
-In the project directory, you can run:
+### What is The Block? - Main Concept
 
-### `yarn start`
+The Block is a application which organizes information found in the [BALOCK](http://bit.ly/flatiron-student-resources), an unofficial resource at Flatiron School that is an amazing spreadsheet composed of links to various resources regarding software development and tech in general. This project aims to display that information in an easy to navigate format. Clients do not have to register to view links, but can register if they wish to leave comments.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can clone this repo to test the client side on your local machine ass well as the server side repo, [The Block - Backend](https://github.com/rukshanuddin/final_backend), to test the client side of the application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### How It Works
 
-### `yarn test`
+After navigating to the root page, users will be presented with a menu on the left to check out the Topics/Links available. They can read more about the project and also have the option of Signup/Login.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After creating an account, the user will be able to leave/delete comments on links.
 
-### `yarn build`
+### The Problem that is Solved
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The original document from which this project is based is a Google spreadsheet, that can be difficult to navigate and slow to load at times. This presents that information in an easy-to-navigate format and gives people the added option of leaving comments.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### `yarn eject`
+### Installing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This projects is setup taking into consideration that the [API](https://github.com/rukshanuddin/final_backend) is already running on [localhost](http://localhost:3000/) port 3000. Directions are available in the [README file of that repo](https://github.com/rukshanuddin/final_backend/blob/master/README.md). Please download the API and start the server before the following steps.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone this project
+2. Navigate to directory and from the terminal, run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```shell
+    npm install
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. After package installation is complete, run
 
-## Learn More
+    ```shell
+    npm start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Check to see if it is working by opening **[localhost:3001](http://localhost:3001/)**(or whichever port you specified) in your browser.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Checklist
 
-### Code Splitting
+[Checklist available here](https://github.com/rukshanuddin/final_frontend/blob/master/CHECKLIST.md)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Built With
 
-### Analyzing the Bundle Size
+* [React](https://reactjs.org/) - JavaScript library for building user interfaces
+* [react-router](https://reactrouter.com/) - Collection of navigational components that compose declaratively with your application.
+* [connected-react-router](https://github.com/supasate/connected-react-router) -A Redux binding for React Router v4.
+* [redux](https://redux.js.org/) - JavaScript library for managing application state
+* [react-redux](https://react-redux.js.org/) - Official React bindings for Redux
+* [redux-thunk](https://github.com/reduxjs/redux-thunk) - Middleware that allows you to write action creators that return a function instead of an action.
+* [@material-ui/core](https://material-ui.com/) - React components for faster and easier web development.
+* [@material-ui/icons](https://material-ui.com/components/material-icons/) - Google [Material icons](https://material.io/resources/icons/) packaged as a set of React components.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Authors
 
-### Making a Progressive Web App
+* **Rukshan Uddin** - *Initial work* - [GitHub/rukshanuddin](https://github.com/rukshanuddin) - [Personal Site](https://awesomeweb.design)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## License
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
