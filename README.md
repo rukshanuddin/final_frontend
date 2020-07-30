@@ -59,6 +59,12 @@ This projects is setup taking into consideration that the [API](https://github.c
 * [@material-ui/core](https://material-ui.com/) - React components for faster and easier web development.
 * [@material-ui/icons](https://material-ui.com/components/material-icons/) - Google [Material icons](https://material.io/resources/icons/) packaged as a set of React components.
 
+## Contributing
+
+Issues and pull requests are welcome at [https://github.com/rukshanuddin/final_frontend](https://github.com/rukshanuddin/final_frontend). This project as well as all other content on my GitHub are intended to be safe, welcoming, and open for collaboration.
+
+Users are expected to adhere to the [Contributor Covenant code of conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct)
+
 ## Authors
 
 * **Rukshan Uddin** - *Initial work* - [GitHub/rukshanuddin](https://github.com/rukshanuddin) - [Personal Site](https://awesomeweb.design)
