@@ -19,9 +19,7 @@ class CommentForm extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    const comment = { ...this.state };
-    this.props.addComment(this.props.link.id, comment);
-    // this.props.history.push(`/links/${this.props.link.id}`);
+    this.props.addComment(this.props.link.id, this.state );
   };
 
   render() {
@@ -37,7 +35,9 @@ class CommentForm extends Component {
             onChange={this.handleOnChange}
           />
           <hr />
-          <Button type="submit">Submit</Button>
+          <Button variant="outlined" color="primary" type="submit">
+            Submit
+          </Button>
         </form>
       );
     } else {
