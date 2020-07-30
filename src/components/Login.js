@@ -19,7 +19,16 @@ class Login extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.fetchUser(this.state);
+
   };
+
+  componentDidUpdate(){
+          if (this.props.userReducer.loggedIn) {
+            this.props.history.push("/");
+          } else {
+            
+          }
+  }
 
   render() {
     return (
@@ -42,10 +51,10 @@ class Login extends Component {
             If you haven't please register above
           </Typography>
           <Paper style={{ marginTop: "1em", padding: "1em" }}>
-            <form onSubmit={this.handleLogin} noValidate autoComplete="off">
+            <form onSubmit={this.onSubmit}>
               <TextField
                 required
-                type="email"
+                type="text"
                 name="email"
                 placeholder="E-mail"
                 value={this.state.email}
@@ -73,6 +82,7 @@ class Login extends Component {
                 size="large"
                 color="primary"
                 type="submit"
+                value="Login"
                 style={{ marginTop: "1em" }}
               >
                 Login
@@ -85,10 +95,16 @@ class Login extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    userReducer: state.userReducer,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUser: (userInfo) => dispatch(fetchUser(userInfo)),
   };
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
