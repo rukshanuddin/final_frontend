@@ -21,7 +21,6 @@ class CommentForm extends Component {
     event.preventDefault();
     const comment = { ...this.state };
     this.props.addComment(this.props.link.id, comment);
-    // debugger
     // this.props.history.push(`/links/${this.props.link.id}`);
   };
 
