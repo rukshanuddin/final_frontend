@@ -16,16 +16,19 @@ const styles = (theme) => ({
   },
 });
 
-const Title = ({classes}) => (
-    <Paper square={true} elevation={12} className={classes.root}>
-      <Typography variant="h1" component="h1" align="center">
-        The B.L.O.C.K.
-      </Typography>
-      <Typography variant="h4" component="h2" align="center">
-        Flatiron School's Big-Ass List of Code Knowledge
-      </Typography>
-    </Paper>
-  );
+const Title = ({ classes }) => (
+  <Paper square={true} elevation={12} className={classes.root}>
+    <Typography variant="h1" component="h1" align="center">
+      The B.L.O.C.K.
+    </Typography>
+    <Typography variant="h4" component="h2" align="center">
+      Flatiron School's Big-Ass List of Code Knowledge
+    </Typography>
+    <Typography variant="subtitle2" component="p" align="center">
+      A Rails/ReactJS project by Rukshan J. Uddin.
+    </Typography>
+  </Paper>
+);
 
 
 export default withStyles(styles)(Title);
