@@ -93,7 +93,7 @@ const Sidebar = (props) => (
         </ListItem>
       </Link>
 
-      <a href="https://awesomeweb.design" className={props.classes.link}>
+      <a href="https://awesomeweb.design" target="blank" className={props.classes.link}>
         <ListItem button>
           <ListItemIcon>
             <SentimentVerySatisfiedOutlinedIcon />
