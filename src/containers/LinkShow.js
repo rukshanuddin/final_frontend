@@ -101,8 +101,6 @@ class LinkShow extends Component {
                 elevation={14}
                 style={{
                   width: "95%",
-                  display: "flex",
-                  flexDirection: "column",
                   alignItems: "center",
                   padding: "1em",
                   margin: "auto",
