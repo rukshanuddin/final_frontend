@@ -15,21 +15,21 @@ import { Link } from "react-router-dom";
 export default function LinksList(props) {
   const columns = [
     { id: "name", label: "Name", minWidth: 100 },
-    { id: "url", label: "URL", minWidth: 200 },
+    { id: "url", label: "URL", minWidth: 200, },
     {
       id: "language",
       label: "Languages/Frameworks",
       minWidth: 100,
-      align: "right",
+      align: "center",
     },
-    { id: "category", label: "Category", minWidth: 100, align: "right" },
+    { id: "category", label: "Category", minWidth: 100, align: "left" },
     { id: "section", label: "Section", minWidth: 100, align: "right" },
-    { id: "id", label: "Id", minWidth: 40 },
+    
   ];
 
   const useStyles = makeStyles({
     root: {
-      width: "100%",
+      width: "95%",
       margin: "auto",
       marginTop: "2em",
       marginBottom: "2em",

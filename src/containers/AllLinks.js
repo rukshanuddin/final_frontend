@@ -18,12 +18,11 @@ class AllLinks extends Component {
           square={true}
           elevation={15}
           style={{
-            display: "flex",
+            margin: "auto",
+            marginBottom: "2em",
             flexDirection: "column",
+            paddingBottom: "2em",
             alignItems: "center",
-            paddingTop: "1em",
-            paddingBottom: "1em",
-            margin: "2em",
             width: "95%",
           }}
         >

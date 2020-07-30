@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchLink } from "../actions/linkActions";
-import { fetchComments } from '../actions/commentActions'
+import { fetchComments } from "../actions/commentActions";
 import { Typography, Link, Paper } from "@material-ui/core";
 import NewComment from "../components/NewComment";
 import Comments from "./Comments";
@@ -10,7 +10,7 @@ class LinkShow extends Component {
   componentDidMount() {
     let paramsId = parseInt(this.props.match.params.id, 10);
     this.props.fetchLink(paramsId);
-    this.props.fetchComments(paramsId)
+    this.props.fetchComments(paramsId);
   }
 
   render() {
@@ -24,8 +24,7 @@ class LinkShow extends Component {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          paddingTop: "1em",
-          paddingBottom: "1em",
+          padding: "1em",
           margin: "2em",
         }}
       >
@@ -43,6 +42,8 @@ class LinkShow extends Component {
           elevation={14}
           style={{
             width: "95%",
+            display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             padding: "1em",
             margin: "2em",
@@ -53,34 +54,71 @@ class LinkShow extends Component {
             elevation={15}
             style={{
               width: "95%",
+              display: "flex",
+              flexDirection: "column",
               alignItems: "justify",
               padding: "1em",
-              margin: "auto",
+              margin: "2em",
             }}
           >
             <Typography variant="subtitle1">
-              {" "}
               <strong>Description</strong>
-              <br />
-              <br />
+              <hr />
               <em>{showLink.blurb}</em>
             </Typography>
             <br />
             <Typography variant="subtitle2">
-              Flatiron School Section : {showLink.section}
+              <strong>Flatiron School Section</strong> : {showLink.section}
             </Typography>
-            <br />
             <Typography variant="subtitle2">
-              Languages/Frameworks :{showLink.language}
+              <strong>Category</strong> : {showLink.section}
             </Typography>
-            <Comments props={this.props} link={showLink} comments={this.props.comments}/>
-            <NewComment link={showLink}/>
-          </Paper>
-
-          <Link href={showLink.url}>
+            <Typography variant="subtitle2">
+              <strong>Languages/Frameworks</strong> :{showLink.language}
+            </Typography>
             <Paper
               square={true}
-              elevation={24}
+              elevation={14}
+              style={{
+                width: "95%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                padding: "1em",
+                margin: "auto",
+                marginTop: "2em",
+                marginBottom: "2em",
+              }}
+            >
+              <Comments
+                props={this.props}
+                link={showLink}
+                comments={this.props.comments}
+              />
+              <br />
+              <Paper
+                square={true}
+                elevation={14}
+                style={{
+                  width: "95%",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: "1em",
+                  margin: "auto",
+                  marginTop: "2em",
+                  marginBottom: "2em",
+                }}
+              >
+                <NewComment props={this.props} link={showLink} />
+              </Paper>
+            </Paper>
+          </Paper>
+
+          <Link href={showLink.url} target="blank">
+            <Paper
+              square={true}
+              elevation={16}
               style={{
                 width: "95%",
                 padding: "1em",
@@ -95,7 +133,8 @@ class LinkShow extends Component {
               >
                 <em>
                   <strong>Click Me!</strong>
-                </em>
+                </em><br/>
+                <small>Visit link in new window!</small>
               </Typography>
             </Paper>
           </Link>
@@ -109,7 +148,7 @@ const mapStateToProps = (state) => {
   return {
     link: state.link,
     comments: state.comments,
-    userReducer: state.userReducer
+    userReducer: state.userReducer,
   };
 };
 

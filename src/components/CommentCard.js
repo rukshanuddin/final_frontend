@@ -1,38 +1,51 @@
 import React from "react";
-import { Paper } from "@material-ui/core";
+import {withRouter} from 'react-router-dom'
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+const styles = (theme) => ({
+  root: {
+    minWidth: 275,
+    padding: "1em",
+    margin:"1em",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 
-const CommentCard = ({ comment, removeComment}) => (
-  
-  <div>
-    <div className="card card-inverse card-success card-primary mb-3 text-center">
-      <Paper>
-        <div className="card-block">
-          <blockquote className="card-blockquote">
-            <p>{comment.body}</p>
-            <footer>
-              - author <cite title="Source Title">{comment.user}</cite>
-            </footer>
-          </blockquote>
-        </div>
-        <div className="float-right">
-          <div
-            className="btn-group btn-group-sm"
-            role="group"
-            aria-label="Basic example"
-          >
-            <button
-              type="button"
-              
-              onClick={() => removeComment(comment.link_id, comment.id)}
-              className="btn btn-danger"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        </div>
-      </Paper>
-    </div>
-  </div>
+
+const CommentCard = ({ comment, removeComment, classes }) => (
+  <Card className={classes.root}>
+    <CardContent>
+      <Typography className={classes.title} color="textSecondary" gutterBottom>
+        Comment #{comment.id}
+      </Typography>
+      <Typography variant="h5" component="h2">
+        {comment.body}
+      </Typography>
+      <Typography className={classes.pos} color="textSecondary">
+        {comment.posted}
+      </Typography>
+      <Typography variant="body2" component="p">
+        Posted by: {comment.user}
+      </Typography>
+    </CardContent>
+    <CardActions>
+      <Button
+        onClick={() => removeComment(comment.link_id, comment.id)}
+        size="small"
+      >
+        Delete
+      </Button>
+    </CardActions>
+  </Card>
 );
 
-export default CommentCard;
+export default withRouter(withStyles(styles)(CommentCard));
