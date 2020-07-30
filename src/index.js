@@ -11,6 +11,22 @@ import * as serviceWorker from "./serviceWorker";
 
 const store = configureStore();
 
+const token = localStorage.getItem("token");
+if (token) {
+  fetch("http://localhost:3000/profile/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        store.dispatch({ type: "FETCH_USER", payload: data });
+      });;
+}
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
